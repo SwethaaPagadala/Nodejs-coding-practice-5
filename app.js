@@ -69,7 +69,7 @@ const movie = await db.get(getMovieQuery);
 response.send(convertMovieDbObjectToResponseObject(movie));
 })
 
-app.post("/movies/"async(request,response)=>{
+app.post("/movies/", async (request,response)=>{
   const {directorId,movieName,leadActor} = request.body;
   const postMovieQuery = `
   insert into
