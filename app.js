@@ -3,7 +3,7 @@ const {open} = require('sqlite')
 const sqlite3 = require('sqlite3')
 const path = require('path')
 
-const db = path.join(__dirname, 'moviesData.db')
+const databasePath = path.join(__dirname, 'moviesData.db')
 
 const app = express()
 
@@ -13,7 +13,7 @@ let db = null
 
 const initialize = async () => {
   try {
-    database = await open({
+    db = await open({
       filename: databasePath,
       driver: sqlite3.Database,
     })
